@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Define a struct for the order
+//define a struct for the order
 typedef struct Order {
     int orderNumber;
     char itemName[50];
     struct Order* next;
 } Order;
 
-// Creates a new order node
+//creates a new order node
 Order* createOrder(int orderNumber, const char* itemName) {
     Order* newOrder = (Order*)malloc(sizeof(Order));
     newOrder->orderNumber = orderNumber;
@@ -18,7 +18,7 @@ Order* createOrder(int orderNumber, const char* itemName) {
     return newOrder;
 }
 
-// Add an order to the end of linked list
+//add an order to the end of linked list
 Order* addOrder(Order* tail, int orderNumber, const char* itemName) {
     Order* newOrder = createOrder(orderNumber, itemName);
     if (tail == NULL) {
@@ -28,7 +28,7 @@ Order* addOrder(Order* tail, int orderNumber, const char* itemName) {
     return newOrder;
 }
 
-// Displays orders in the linked list
+//displays orders in the linked list
 void displayOrders(Order* head) {
     if (head == NULL) {
         printf("No orders in the list.\n");
@@ -42,7 +42,7 @@ void displayOrders(Order* head) {
     }
 }
 
-// Removes first order from the linked list 
+//removes first order from the linked list 
 Order* removeFirstOrder(Order* head) {
     if (head == NULL) {
         printf("No orders in the list to remove.\n");
@@ -54,7 +54,7 @@ Order* removeFirstOrder(Order* head) {
     return newHead;
 }
 
-// Free memory used by linked list
+//free memory used by linked list
 void freeOrders(Order* head) {
     while (head != NULL) {
         Order* temp = head;
@@ -63,27 +63,8 @@ void freeOrders(Order* head) {
     }
 }
 
+//main function
 int main() {
-    printf("Hello welcome to whataburger! My name is Asa Gordon! Will you be using the mobile app today?\n");
-    printf("Yes No\n");
-
-    char appUsage[4];
-    scanf("%s", appUsage);
-
-    if (strcmp(appUsage, "Yes") == 0 || strcmp(appUsage, "yes") == 0) {
-        char firstName[20];
-        char lastName[20];
-
-        printf("Great! Please enter your first name: ");
-        scanf("%s", firstName);
-
-        printf("Please enter your last name: ");
-        scanf("%s", lastName);
-
-        printf("Great! Pull up to the first window!\n *hang up* \n");
-        return 0;
-    }
-
     Order* head = NULL;
     Order* tail = NULL;
 
