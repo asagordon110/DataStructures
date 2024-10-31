@@ -1,2 +1,3 @@
-# DataStructures
-All my projects / assignments from my data Structures course
+# DataStructures and Analysis of Algorithms
+
+All of my projects and assignments from Data Structures and Analysis of Algorithms courses.
